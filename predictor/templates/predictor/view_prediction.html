@@ -1,0 +1,185 @@
+{% extends "predictor/base.html" %}
+
+{% block content %}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+
+    <div>
+        <h2 class="fw-bold">Smartphone Details</h2>
+        <p class="text-muted">
+            Complete information about the selected smartphone prediction.
+        </p>
+    </div>
+
+    <a href="{% url 'dashboard' %}" class="btn btn-secondary">
+        ← Back to Dashboard
+    </a>
+
+</div>
+
+<div class="card shadow border-0">
+
+    <div class="card-header bg-primary text-white">
+        Smartphone Specifications
+    </div>
+
+    <div class="card-body">
+
+        <div class="row">
+
+            <!-- LEFT COLUMN -->
+            <div class="col-md-6">
+
+                <table class="table table-bordered">
+
+                    <tr>
+                        <th>Battery Power</th>
+                        <td>{{ item.battery_power }}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Bluetooth</th>
+                        <td>{{ item.blue }}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Clock Speed</th>
+                        <td>{{ item.clock_speed }}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Dual SIM</th>
+                        <td>{{ item.dual_sim }}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Front Camera</th>
+                        <td>{{ item.fc }}</td>
+                    </tr>
+
+                    <tr>
+                        <th>4G</th>
+                        <td>{{ item.four_g }}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Internal Memory</th>
+                        <td>{{ item.int_memory }}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Mobile Depth</th>
+                        <td>{{ item.m_dep }}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Weight</th>
+                        <td>{{ item.mobile_wt }}</td>
+                    </tr>
+
+                    <tr>
+                        <th>CPU Cores</th>
+                        <td>{{ item.n_cores }}</td>
+                    </tr>
+
+                </table>
+
+            </div>
+
+            <!-- RIGHT COLUMN -->
+            <div class="col-md-6">
+
+                <table class="table table-bordered">
+
+                    <tr>
+                        <th>Primary Camera</th>
+                        <td>{{ item.pc }}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Pixel Height</th>
+                        <td>{{ item.px_height }}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Pixel Width</th>
+                        <td>{{ item.px_width }}</td>
+                    </tr>
+
+                    <tr>
+                        <th>RAM</th>
+                        <td>{{ item.ram }}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Screen Height</th>
+                        <td>{{ item.sc_h }}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Screen Width</th>
+                        <td>{{ item.sc_w }}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Talk Time</th>
+                        <td>{{ item.talk_time }}</td>
+                    </tr>
+
+                    <tr>
+                        <th>3G</th>
+                        <td>{{ item.three_g }}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Touch Screen</th>
+                        <td>{{ item.touch_screen }}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Wi-Fi</th>
+                        <td>{{ item.wifi }}</td>
+                    </tr>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="card shadow border-0 mt-4">
+
+    <div class="card-header bg-success text-white">
+        Prediction Result
+    </div>
+
+    <div class="card-body text-center">
+
+        {% if item.prediction == 0 %}
+            <h2 class="text-secondary">📱 Low-End Phone</h2>
+
+        {% elif item.prediction == 1 %}
+            <h2 class="text-primary">💵 Budget Phone</h2>
+
+        {% elif item.prediction == 2 %}
+            <h2 class="text-warning">📲 Mid-Range Phone</h2>
+
+        {% else %}
+            <h2 class="text-success">🔥 Flagship Phone</h2>
+
+        {% endif %}
+
+        <p class="text-muted mt-2">
+            Date Predicted:
+            <strong>{{ item.created_at|date:"F d, Y h:i A" }}</strong>
+        </p>
+
+    </div>
+
+</div>
+
+{% endblock %}

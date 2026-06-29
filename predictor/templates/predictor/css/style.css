@@ -1,0 +1,391 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Segoe UI',sans-serif;
+background:#eef2f7;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+
+position:fixed;
+
+left:0;
+
+top:0;
+
+width:260px;
+
+height:100vh;
+
+background:linear-gradient(180deg,#0f172a,#1e3a8a);
+
+color:#fff;
+
+overflow:auto;
+
+}
+
+.logo{
+
+padding:35px;
+
+text-align:center;
+
+border-bottom:1px solid rgba(255,255,255,.1);
+
+}
+
+.logo h2{
+
+font-weight:700;
+
+margin-bottom:10px;
+
+}
+
+.logo p{
+
+font-size:13px;
+
+color:#cbd5e1;
+
+}
+
+.sidebar ul{
+
+list-style:none;
+
+padding:0;
+
+margin-top:20px;
+
+}
+
+.sidebar li{
+
+margin-bottom:5px;
+
+}
+
+.sidebar a{
+
+display:block;
+
+padding:16px 30px;
+
+color:white;
+
+text-decoration:none;
+
+transition:.3s;
+
+font-size:15px;
+
+}
+
+.sidebar a:hover{
+
+background:rgba(255,255,255,.12);
+
+padding-left:40px;
+
+}
+
+.sidebar i{
+
+margin-right:10px;
+
+}
+
+/* MAIN */
+
+.main{
+
+margin-left:260px;
+
+}
+
+/* TOPBAR */
+
+.topbar{
+
+height:70px;
+
+background:white;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:0 30px;
+
+box-shadow:0 3px 12px rgba(0,0,0,.08);
+
+}
+
+.topbar h3{
+
+font-size:24px;
+
+font-weight:600;
+
+}
+
+.user{
+
+font-weight:600;
+
+color:#2563eb;
+
+}
+
+/* CONTENT */
+
+.page-content{
+
+padding:35px;
+
+}
+
+/* CARDS */
+
+.card{
+
+border:none;
+
+border-radius:18px;
+
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+transition:.3s;
+
+}
+
+.card:hover{
+
+transform:translateY(-5px);
+
+}
+
+/* TABLE */
+
+.table{
+
+background:white;
+
+border-radius:15px;
+
+overflow:hidden;
+
+}
+
+.table thead{
+
+background:#0f172a;
+
+color:white;
+
+}
+
+/* BUTTON */
+
+.btn{
+
+border-radius:10px;
+
+padding:8px 18px;
+
+}
+
+/* BADGES */
+
+.badge{
+
+font-size:13px;
+
+padding:8px 12px;
+
+}
+
+/* Sidebar Divider */
+
+.sidebar-divider{
+
+border:0;
+
+height:1px;
+
+background:rgba(255,255,255,.15);
+
+margin:20px;
+
+}
+
+/* Sidebar Section Title */
+
+.sidebar{
+    font-family:'Poppins',sans-serif;
+}
+
+.sidebar h3{
+    font-size:22px;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+.sidebar small{
+    font-size:12px;
+    font-weight:400;
+    color:#cbd5e1;
+}
+
+.sidebar a{
+    font-size:14px;
+    font-weight:500;
+}
+/* Footer */
+
+.sidebar-footer{
+
+position:absolute;
+
+bottom:20px;
+
+left:20px;
+
+right:20px;
+
+padding-top:15px;
+
+border-top:1px solid rgba(255,255,255,.15);
+
+text-align:center;
+
+color:#cbd5e1;
+
+font-size:12px;
+
+}
+
+/* Logo */
+
+.logo{
+
+padding:30px 20px;
+
+text-align:center;
+
+}
+
+.logo h2{
+
+margin:0;
+
+font-weight:700;
+
+color:#fff;
+
+}
+
+.logo small{
+
+color:#cbd5e1;
+
+display:block;
+
+margin-top:6px;
+
+line-height:1.5;
+
+}
+
+.sidebar-link {
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    display: block;
+    transition: 0.3s;
+    border-left: 3px solid transparent;
+}
+
+.sidebar-link:hover {
+    background: #2563eb;
+    border-left: 3px solid #fff;
+}
+
+.sidebar {
+    width: 260px;
+    background: #111827;
+    min-height: 100vh;
+}
+.table {
+    font-size: 13px;
+}
+
+.table th {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 10px;
+}
+
+.table td {
+    padding: 8px;
+    vertical-align: middle;
+}
+
+.card {
+    border-radius: 10px;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card h3 {
+    font-size: 22px;
+    margin: 0;
+}
+
+.card h6 {
+    font-size: 12px;
+    color: #6b7280;
+}
+.container {
+    max-width: 1100px;
+}
+
+.row.g-4 {
+    gap: 12px;
+}
+
+/* Prediction Form */
+.form-control,
+.form-select{
+    height:40px;
+    font-size:14px;
+    border-radius:8px;
+}
+
+.form-label{
+    font-size:13px;
+    font-weight:600;
+    margin-bottom:5px;
+}
+
+/* Prediction Form Card */
+.card{
+    border-radius:14px;
+}
+
+.card-body{
+    padding:20px !important;
+}
