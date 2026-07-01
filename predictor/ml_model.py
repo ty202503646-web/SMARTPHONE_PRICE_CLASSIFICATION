@@ -1,7 +1,21 @@
-import joblib
 import os
+import joblib
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-model_path = os.path.join(BASE_DIR, "model.pkl")
+PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-model = joblib.load(model_path)
+MODEL_PATH = os.path.join(
+    PROJECT_DIR,
+    "ml",
+    "models",
+    "logistic_model.pkl",
+)
+
+SCALER_PATH = os.path.join(
+    PROJECT_DIR,
+    "ml",
+    "models",
+    "scaler.pkl",
+)
+
+model = joblib.load(MODEL_PATH)
+scaler = joblib.load(SCALER_PATH)

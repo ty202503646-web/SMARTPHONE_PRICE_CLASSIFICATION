@@ -45,40 +45,64 @@
 </div>
 
 <!-- CHART -->
+<!-- CHART -->
 <div class="card border-0 shadow-sm mb-4">
     <div class="card-body">
-        <h5 class="mb-3">Prediction Analytics</h5>
-        <canvas id="chart" height="100"></canvas>
+        <h5>Prediction Analytics</h5>
+       <div style="height:300px;">
+    <canvas id="predictionChart"></canvas>
+</div>
     </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
-new Chart(document.getElementById("chart"), {
+new Chart(document.getElementById("predictionChart"), {
     type: "bar",
     data: {
         labels: ["Low-End", "Budget", "Mid-Range", "Flagship"],
         datasets: [{
-            label: "Predictions",
-        data: [
-            Number("{{ low|default:0 }}"),
-            Number("{{ budget|default:0 }}"),
-            Number("{{ mid|default:0 }}"),
-            Number("{{ flagship|default:0 }}")
-]
-            backgroundColor: ["#6c757d", "#0d6efd", "#ffc107", "#198754"]
+            label: "Number of Predictions",
+            data: [
+                {{ low }},
+                {{ budget }},
+                {{ mid }},
+                {{ flagship }}
+            ],
+            backgroundColor: [
+                "#6c757d",
+                "#0d6efd",
+                "#ffc107",
+                "#198754"
+            ]
         }]
     },
     options: {
         responsive: true,
+        maintainAspectRatio: false,
+
         plugins: {
-            legend: { display: false }
+            title: {
+                display: true,
+                text: "Smartphone Prediction Distribution"
+            },
+            legend: {
+                display: false
+            }
+        },
+
+        scales: {
+            y: {
+                beginAtZero: true,
+                ticks: {
+                    stepSize: 1
+                }
+            }
         }
     }
 });
 </script>
-
 <!-- TABLE -->
 <div class="card shadow-sm mt-4 p-3">
 
@@ -134,11 +158,21 @@ new Chart(document.getElementById("chart"), {
             <tr>
                 <td colspan="7" class="text-center">No predictions yet</td>
             </tr>
+
+
+
+
+
+
         {% endfor %}
         </tbody>
 
     </table>
 
+    
+
 </div>
+
+
 
 {% endblock %}

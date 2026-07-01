@@ -1,231 +1,167 @@
-# 📱 Smartphone Price Classification System using Machine Learning and Django
+Smartphone Price Range Classification Using Machine Learning
 
-## Project Description
+PROJECT DESCRIPTION
 
-The Smartphone Price Classification System is a web-based machine learning application developed using Python, Django Framework, and Scikit-learn. The system predicts the price category of a smartphone based on its specifications such as RAM, battery power, screen resolution, internal memory, and other hardware features.
+This project is a Machine Learning-based Smartphone Price Range Classification System developed using Python, Scikit-learn, and Django.
 
-The application allows users to enter smartphone specifications through a web interface and automatically predicts the corresponding price range using a trained Machine Learning model.
+The system predicts the price range category of a smartphone based on its specifications instead of predicting its exact selling price.
 
----
+The trained machine learning model is integrated into a Django web application where users can input smartphone specifications and instantly receive a predicted price range.
 
-# Project Objectives
+PROJECT OBJECTIVES
 
-The main objectives of this project are:
+The objectives of this project are to:
 
-- Develop a Machine Learning model capable of classifying smartphone prices.
-- Perform data cleaning and preprocessing techniques before training.
-- Compare different machine learning algorithms.
-- Deploy the best-performing model using Django.
-- Provide a user-friendly web application for smartphone price prediction.
+-Develop a machine learning classification model for smartphone price range prediction.
+-Compare the performance of five different machine learning algorithms.
+-Perform data cleaning and feature engineering.
+-Evaluate different versions of the dataset.
+-Deploy the best-performing model into a Django web application.
+-Dataset
 
----
+DATASET NAME
 
-# Dataset
+Smartphone Price Prediction Dataset
 
-**Dataset Name**
-
-Mobile Price Classification Dataset
-
-**Source**
+SOURCE
 
 https://www.kaggle.com/datasets/iabhishekofficial/mobile-price-classification
 
-The dataset contains **2,000 smartphone records** with **20 input features** and **1 target variable**.
+DATASET FEATURES
 
----
+Feature	                                  Description
 
-# Dataset Features
+battery_power	                          Battery capacity (mAh)
+blue	                                  Bluetooth support (0 = No, 1 = Yes)
+clock_speed	Processor                     speed (GHz)
+dual_sim	                              Dual SIM support
+fc	                                      Front camera resolution (MP)
+four_g	                                  4G support
+int_memory	                              Internal storage (GB)
+m_dep	                                  Mobile thickness
+mobile_wt	                              Mobile weight (grams)
+n_cores	                                  Number of processor cores
+pc	                                      Primary camera resolution (MP)
+px_height	                              Screen pixel height
+px_width	                              Screen pixel width
+ram	                                      RAM capacity (MB)
+sc_h	                                  Screen height
+sc_w	                                  Screen width
+talk_time	                              Battery talk time (hours)
+three_g	                                  3G support
+touch_screen	                          Touch screen support
+wifi	                                  WiFi support
+price_range	                             Target class (0–3)
 
-| Feature | Description |
-|----------|-------------|
-| battery_power | Battery capacity (mAh) |
-| blue | Bluetooth availability (0 = No, 1 = Yes) |
-| clock_speed | Processor clock speed (GHz) |
-| dual_sim | Dual SIM support |
-| fc | Front camera megapixels |
-| four_g | 4G support |
-| int_memory | Internal memory (GB) |
-| m_dep | Mobile depth (cm) |
-| mobile_wt | Mobile weight (grams) |
-| n_cores | Number of processor cores |
-| pc | Primary camera megapixels |
-| px_height | Pixel resolution height |
-| px_width | Pixel resolution width |
-| ram | RAM capacity (MB) |
-| sc_h | Screen height |
-| sc_w | Screen width |
-| talk_time | Battery talk time (hours) |
-| three_g | 3G support |
-| touch_screen | Touchscreen support |
-| wifi | WiFi support |
-| price_range | Smartphone price category (Target Variable) |
 
----
 
-# Data Cleaning and Preparation
+TARGET VARIABLE
 
-The following preprocessing techniques were applied:
+price_range
 
-- Checked missing values
-- Removed duplicate records
-- Verified data consistency
-- Checked data types
-- Feature and target separation
-- Train-Test Split (80%-20%)
+Value	                                  Meaning
+0	                                    Low-End Phone
+1	                                    Budget Phone
+2	                                    Mid-Range Phone
+3	                                    Flagship Phone
 
-No missing values were found in the dataset.
 
----
+DATA CLEANING AND PREPARATION
 
-# Feature Engineering
+The following preprocessing techniques were performed:
 
-The following feature engineering techniques were applied:
+-Checked and removed duplicate records
+-Checked missing (NULL) values
+-Verified data consistency
+-Standardized numerical features using StandardScaler (Version 3)
+-Created multiple dataset versions for experimentation
 
-- Feature Selection
-- Removal of unnecessary attributes
-- Preparation of predictor variables (X)
-- Preparation of target variable (y)
 
----
+DATASET VERSIONS
 
-# Machine Learning Algorithm
+Version 1
+        - Raw dataset
 
-Current implemented model:
+Version 2
+    Cleaned dataset
+        - Duplicate checking
+        - Missing value checking
+        - Data consistency validation
 
-- Random Forest Classifier
+Version 3
+    Scaled dataset
+        - StandardScaler applied
+        - Used for Logistic Regression and SVM experiments
 
-Libraries used:
 
-- Pandas
-- NumPy
-- Matplotlib
-- Scikit-learn
-- Joblib
+Machine Learning Algorithms Used
+       - Random Forest Classifier
+        - Decision Tree Classifier
+        - K-Nearest Neighbors (KNN)
+        - Logistic Regression
+        - Support Vector Machine (SVM)
 
----
+    
+ Model Performance
+    Model	              Version 1	                  Version 2	         Version 3
 
-# Model Performance
+Random Forest	           89.25%	                   89.25%	           89.25%
+Decision Tree	           83.25%	                   83.25%	           83.75%
+KNN	                       94.25%	                   94.25%	           53.00%
+Logistic Regression	       75.75%	                   75.75%	           97.75%
+SVM	                       96.50%	                   96.50%	           89.25%
 
-Accuracy
+Best Model
+    Algorithm: Logistic Regression
 
-```
-89.25%
-```
+    Dataset Version: Version 3 (Scaled Dataset)
+        - Accuracy: 97.75%
 
-Classification Report
+Evaluation Metrics:
+        Accuracy
+        Precision
+        Recall
+        F1-score
+        Confusion Matrix
 
-```
-Precision : 0.89
-Recall    : 0.89
-F1 Score  : 0.89
-```
 
-Confusion Matrix
+Django Web Application Features
+    The deployed Django application includes:
+        - Smartphone prediction form
+        - Price range prediction
+        - Prediction history
+        - Dashboard
+        - Prediction analytics chart
+        - Update prediction
+        - Delete prediction
+        - Export prediction history to CSV
 
-```
-[[101   4   0   0]
- [  5  79   7   0]
- [  0   6  80   6]
- [  0   0  15  97]]
-```
 
----
+Technologies Used
+    - Python
+    - Pandas
+    - NumPy
+    - Scikit-learn
+    - Matplotlib
+    - Django
+    - Bootstrap 5
+    - SQLite3
 
-# Django Web Application Features
 
-The deployed web application includes:
+Installation
+    git clone <https://github.com/ty202503646-web/SMARTPHONE_PRICE_CLASSIFICATION>
 
-- Home Page
-- Prediction Form
-- Prediction Result
-- Prediction History
-- Dashboard
-- About Page
-- Dataset Information Page
-
----
-
-# Technologies Used
-
-- Python 3.11
-- Django 5
-- Scikit-learn
-- Pandas
-- NumPy
-- Matplotlib
-- HTML
-- CSS
-- SQLite3
-- Git
-- GitHub
-
----
-
-# Installation Guide
-
-Clone the repository
-
-```bash
-git clone https://github.com/ty202503646-web/SMARTPHONE_PRICE_CLASSIFICATION.git
-```
-
-Navigate to the project
-
-```bash
 cd SMARTPHONE_PRICE_CLASSIFICATION
-```
 
-Create virtual environment
-
-```bash
-python -m venv venv
-```
-
-Activate virtual environment
-
-Windows
-
-```bash
-venv\Scripts\activate
-```
-
-Install dependencies
-
-```bash
 pip install -r requirements.txt
-```
 
-Apply migrations
-
-```bash
 python manage.py migrate
-```
 
-Run the server
-
-```bash
 python manage.py runserver
-```
-
-Open
-
-```
-http://127.0.0.1:8000/
-```
-
----
-
-# Developer
+Author
 
 Angelica Ignacio
 
 Bachelor of Science in Computer Science
 
 Western Mindanao State University
-
----
-
-# License
-
-This project is developed for academic purposes as part of the Machine Learning Final Project.# SMARTPHONE_PRICE_CLASSIFICATION
-Machine Learning Smartphone Price Classification System using Django Framework
